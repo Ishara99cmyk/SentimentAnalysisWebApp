@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>{{ title }} Sentiment Analysis</title>
+  </head>
+  <body>
+    <h1>Welcome To Sentiment Analyzer</h1>
+    <form method="POST">
+      <textarea
+        name="text1"
+        placeholder="Say Something: ...."
+        rows="10"
+        cols="109"
+        style="
+          border: 1px solid #ccc;
+          padding: 5px;
+          font-size: 16px;
+        "></textarea>
+      <br /><br />
+      <input class="example_a" type="submit" value="Analyze" />
+    </form>
+    {% if final %}
+    <div>
+      <h2>The Sentiment of</h2>
+      '{{ text1 }}'
+      <h2>is {{ final * 100 }}% positive!</h2>
+      <h2>Score Table</h2>
+      <table style="width: 100%; border-collapse: collapse">
+        <tr>
+          <th style="text-align: left; padding: 5px; border: 1px solid #ccc">
+            SENTIMENT METRIC
+          </th>
+          <th style="padding: 5px; border: 1px solid #ccc">SCORE</th>
+        </tr>
+        <tr>
+          <td style="padding: 5px; border: 1px solid #ccc">Positive</td>
+          <td style="padding: 5px; border: 1px solid #ccc">{{ text2 }}</td>
+        </tr>
+        <tr>
+          <td style="padding: 5px; border: 1px solid #ccc">Neutral</td>
+          <td style="padding: 5px; border: 1px solid #ccc">{{ text3 }}</td>
+        </tr>
+        <tr>
+          <td style="padding: 5px; border: 1px solid #ccc">Negative</td>
+          <td style="padding: 5px; border: 1px solid #ccc">{{ text5 }}</td>
+        </tr>
+        <tr>
+          <td style="padding: 5px; border: 1px solid #ccc">Compound</td>
+          <td style="padding: 5px; border: 1px solid #ccc">{{ text4 }}</td>
+        </tr>
+      </table>
+    </div>
+    {% else %}
+    <p></p>
+    {% endif %}
+  </body>
+</html>
